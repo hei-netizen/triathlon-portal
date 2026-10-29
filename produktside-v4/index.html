@@ -70,6 +70,8 @@ h1,h2,h3{font-family:var(--h);font-weight:400;color:var(--ink);letter-spacing:.6
 .slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:var(--r);background:var(--white)}
 .slides::-webkit-scrollbar{display:none}
 .slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:1/1;display:grid;place-items:center;background:var(--white)}
+.slide{position:relative;overflow:hidden}
+.slide img,.slide video{position:absolute;inset:0}
 .slide img{width:100%;height:100%;object-fit:cover}
 .slide.pack img{object-fit:contain;padding:9%}
 .instock{position:absolute;top:20px;left:20px;background:var(--white);border-radius:40px;padding:7px 13px;font-size:12px;font-weight:700;color:var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.08);z-index:2}
@@ -319,10 +321,13 @@ h1,h2,h3{font-family:var(--h);font-weight:400;color:var(--ink);letter-spacing:.6
   .product{padding:16px 0 48px}
   .product .wrap{grid-template-columns:minmax(0,1fr);gap:22px}
   .media{position:static}
-  .stage{padding:8px}
+  .stage{padding:6px;box-shadow:none}
+  .slide{aspect-ratio:4/3}
+  .slide img{object-position:center 30%}
+  .slide.pack img{padding:4% 8%}
   .instock{top:16px;left:16px}
-  .thumbs{margin-top:14px;gap:10px}
-  .thumbs button{flex-basis:60px;height:60px}
+  .thumbs{margin-top:10px;gap:8px}
+  .thumbs button{flex-basis:52px;height:52px}
   .info{max-width:none}
   .why-img{aspect-ratio:4/3}
   .info h1{font-size:28px;margin:8px 0 8px}
